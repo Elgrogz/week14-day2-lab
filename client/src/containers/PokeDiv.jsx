@@ -8,7 +8,7 @@ getInitialState: function() {
 },
 
 componentDidMount: function() {
-  var url = "http://pokeapi.co/api/v2/pokemon/";
+  var url = "http://pokeapi.co/api/v2/pokemon/?limit=150";
   var request = new XMLHttpRequest();
   request.open('GET', url);
   request.onload = function() {
