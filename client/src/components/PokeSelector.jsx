@@ -9,8 +9,7 @@ var PokeSelector = React.createClass({
     var details = document.querySelector('.poke-details');
     this.setState({selectedIndex: newIndex});
     this.props.selectPokemon(this.props.pokemon[newIndex]);
-    details.style.visibility = "visible";
-
+    // details.style.visibility = "visible";
   }, 
   render: function() {
     var options = this.props.pokemon.map(function (pokemon, index) {

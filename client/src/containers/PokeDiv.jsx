@@ -27,7 +27,7 @@ setFocusMon: function(poke) {
     if (request.status === 200) {
       var data =JSON.parse(request.responseText);
       this.setState({focusMon: data});
-        console.log(data);
+        // console.log(data);
     }
   }.bind(this);
   request.send();
