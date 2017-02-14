@@ -1,6 +1,6 @@
 var React = require('react');
 var PokeSelector = require('../components/PokeSelector.jsx');
-//var Pokedex = require('../components/Pokedex.jsx');
+var Pokedex = require('../components/Pokedex.jsx');
 
 var PokeDiv = React.createClass({
 getInitialState: function() {
@@ -14,7 +14,7 @@ componentDidMount: function() {
   request.onload = function() {
     if (request.status === 200) {
       var data =JSON.parse(request.responseText);
-      this.setState({pokemon: data.results, focusMon: data[0]});
+      this.setState({pokemon: data.results, focusMon: data.results[0]});
     }
   }.bind(this);
   request.send();
@@ -29,7 +29,7 @@ render: function() {
     <div className="poke-div">
       <h2>Pokemonz</h2>
       <PokeSelector pokemon={this.state.pokemon} selectPokemon={this.setFocusMon}/>
-     
+      <Pokedex poke={this.state.focusMon}/>
     </div>
     )
 }
