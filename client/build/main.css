@@ -1,3 +1,9 @@
 /*.poke-details {
   visibility: hidden;
 }*/
+
+body {
+  background-image: url("https://images.moviepilot.com/images/c_limit,q_auto,w_710/j9yf5eyjwuehyanclzw2/gotta-catch-em-all-these-cosplayers-are-confusing-us-all-with-their-sexy-pokemon-cosplay.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
