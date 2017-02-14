@@ -14,19 +14,21 @@ componentDidMount: function() {
   request.onload = function() {
     if (request.status === 200) {
       var data =JSON.parse(request.responseText);
-      this.setState({pokemon: data, focusMon: data[0]});
+      this.setState({pokemon: data.results, focusMon: data[0]});
     }
   }.bind(this);
   request.send();
 },
 
-
+setFocusMon: function(poke) {
+  this.setState({focusMon: poke});
+},  
 
 render: function() {
   return (
     <div className="poke-div">
       <h2>Pokemonz</h2>
-      <PokeSelector />
+      <PokeSelector pokemon={this.state.pokemon} selectPokemon={this.setFocusMon}/>
      
     </div>
     )
