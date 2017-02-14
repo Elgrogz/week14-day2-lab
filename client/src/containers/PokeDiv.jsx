@@ -21,7 +21,16 @@ componentDidMount: function() {
 },
 
 setFocusMon: function(poke) {
-  this.setState({focusMon: poke});
+  var request = new XMLHttpRequest();
+  request.open('GET', poke.url);
+  request.onload = function() {
+    if (request.status === 200) {
+      var data =JSON.parse(request.responseText);
+      this.setState({focusMon: data});
+        console.log(data);
+    }
+  }.bind(this);
+  request.send();
 },  
 
 render: function() {
